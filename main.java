@@ -36,21 +36,23 @@ public class main {
 		}
 		
 		//exo5 palindrome words
-		String mot = "kok";
+		Scanner motPalindrome = new Scanner(System.in);
+		String mot = motPalindrome.next();
 		mot = mot.toLowerCase();
 		int j = mot.length()-1;
 		Boolean isTrue = true;
 		for (int i = 0; i < mot.length(); i++) {
 			if(mot.charAt(i) == mot.charAt(j)) {
 				j--;
-				System.out.println(j);
 			} else isTrue = false;
 		}
 		if(isTrue) {
-			System.out.println("oui palindrome");
+			System.out.println("Il s'agit d'un mot palindrome");
 		} else {
-			System.out.println("non palindrome");
+			System.out.println("Il ne s'agit pas d'un mot palindrome");			
 		}
-	
+		
+		
+		
 	}
 }
