@@ -8,26 +8,26 @@ public class SnackMounir {
         Ticket ticket = new Ticket();
 
         while (true) {
-            System.out.print("Description de l'article (ou 'exit' pour terminer) : ");
+            System.out.print("Description de l'article (ou 'fin' pour terminer) : ");
             String description = scanner.nextLine();
 
-            if (description.equalsIgnoreCase("exit")) {
+            if (description.equalsIgnoreCase("fin")) {
                 break;
             }
 
             System.out.print("Quantité : ");
-            int quantity = scanner.nextInt();
+            int quantite = scanner.nextInt();
 
             System.out.print("Prix unitaire : ");
-            double unitPrice = scanner.nextDouble();
+            double prixUnitaire = scanner.nextDouble();
 
             scanner.nextLine();
 
-            Article article = new Article(description, quantity, unitPrice);
+            Article article = new Article(description, quantite, prixUnitaire);
             ticket.addArticle(article);
         }
 
-        ticket.generateTicket();
+        ticket.genererTicket();
         scanner.close();
     }
 }

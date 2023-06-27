@@ -6,18 +6,22 @@ import java.util.List;
 import java.util.Scanner;
 
 class Article {
+	
     private String description;
-    private int quantity;
-    private double unitPrice;
+    private int quantite;
+    private double prixUnitaire;
 
-    public Article(String description, int quantity, double unitPrice) {
+    public Article(String description, int quantite, double prixUniatire) {
         this.description = description;
-        this.quantity = quantity;
-        this.unitPrice = unitPrice;
+        this.quantite = quantite;
+        this.prixUnitaire = prixUnitaire;
     }
-
-    public double getTotalPrice() {
-        return quantity * unitPrice;
+    
+	
+	
+	
+    public double getTotal() {
+        return quantite * prixUnitaire;
     }
 
     public String getDescription() {
@@ -25,11 +29,11 @@ class Article {
     }
 
     public int getQuantity() {
-        return quantity;
+        return quantite;
     }
 
-    public double getUnitPrice() {
-        return unitPrice;
+    public double getPrixUnitaire() {
+        return prixUnitaire;
     }
 }
 
@@ -44,7 +48,7 @@ class Ticket {
         articles.add(article);
     }
 
-    public void generateTicket() {
+    public void genererTicket() {
         double totalPrice = 0;
 
         System.out.println("==================== Ticket de caisse ====================");
@@ -54,9 +58,9 @@ class Ticket {
             System.out.printf("%s\t%d\t\t%.2f\t\t%.2f%n", 
             		article.getDescription(), 
             		article.getQuantity(),
-            		article.getUnitPrice(), 
-            		article.getTotalPrice());
-            		totalPrice += article.getTotalPrice();
+            		article.getPrixUnitaire(), 
+            		article.getTotal());
+            		totalPrice += article.getTotal();
         }
 
         System.out.println("==========================================================");
