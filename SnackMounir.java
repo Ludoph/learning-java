@@ -32,8 +32,8 @@ public class SnackMounir {
             Article article = new Article(description, quantite, prixUnitaire);
             ticket.addArticle(article);
         }
-        System.out.print("Mode de paiement : ");
-        String modePaiement = scanner.nextLine();
+        //System.out.print("Mode de paiement : ");
+        //String modePaiement = scanner.nextLine();
 
         ticket.genererTicket();
         scanner.close();

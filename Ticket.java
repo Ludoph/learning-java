@@ -41,7 +41,7 @@ class Ticket {
         }
 
         System.out.println("\n======================================================\n");
-        System.out.printf("%sMode de paiement : \t%s%n", modePaiement);
+       // System.out.printf("%sMode de paiement : \t%s%n", modePaiement);
         System.out.printf("\t\t\t\tT.V.A : \t%.2f%s%n", tva, " €");
         System.out.printf("\t\t\t\tTotal : \t%.2f%s%n", totalPrix, " €");
     }
