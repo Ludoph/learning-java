@@ -5,10 +5,10 @@ import java.util.Scanner;
 
 public class main {
 
-	public static void main(String[] args) {
+	public main(String[] args) {
 		Scanner scanner = new Scanner(System.in);		
 		
-		/*
+		
 		//exo1 count 1 to 10
 		for (int i = 1; i <= 10; i++) {
 			System.out.println(i);
@@ -20,7 +20,6 @@ public class main {
 			y = y + x;
 			System.out.println(y);
 		}
-		 */
 		
 		//exo3 multiplication table
 		System.out.print("Entrez votre table de multiplication :");
@@ -58,7 +57,7 @@ public class main {
 			System.out.println("Il ne s'agit pas d'un mot palindrome");			
 		}
 		
-		
+	
 		
 	}
 }

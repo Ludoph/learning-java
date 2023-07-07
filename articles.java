@@ -2,13 +2,12 @@ package learning_java;
 
 
 class Article {
-	
-    private String description;
+    private String plat;
     private int quantite;
     private double prixUnitaire;
 
-    public Article(String description, int quantite, double prixUnitaire) {
-        this.description = description;
+    public Article(String plat, int quantite, double prixUnitaire) {
+        this.plat = plat;
         this.quantite = quantite;
         this.prixUnitaire = prixUnitaire;
     }
@@ -17,8 +16,8 @@ class Article {
         return quantite * prixUnitaire;
     }
 
-    public String getDescription() {
-        return description;
+    public String getPlat() {
+        return plat;
     }
 
     public int getQuantity() {

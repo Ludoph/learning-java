@@ -7,7 +7,12 @@ import java.util.List;
 
 class Ticket {
     private List<Article> articles;
-
+    private String modePaiement; 
+    
+    public void setModePaiement(String modePaiement) {
+		this.modePaiement = modePaiement;
+	}
+    	
     public Ticket() {
         articles = new ArrayList<>();
     }
@@ -31,7 +36,7 @@ class Ticket {
 
         for (Article article : articles) {
             System.out.printf("%s\t\t%d\t\t%.2f%s\t\t%.2f%s%n", 
-            		article.getDescription(), 
+            		article.getPlat(), 
             		article.getQuantity(),
             		article.getPrixUnitaire(), " €", 
             		article.getTotal(), " €"
@@ -40,9 +45,12 @@ class Ticket {
             		tva = totalPrix * 0.055;
         }
 
-        System.out.println("\n======================================================\n");
-       // System.out.printf("%sMode de paiement : \t%s%n", modePaiement);
+        				System.out.println("\n======================================================\n");
+        System.out.printf("\t\t\t\tPaiement : \t%s\n", modePaiement);
         System.out.printf("\t\t\t\tT.V.A : \t%.2f%s%n", tva, " €");
         System.out.printf("\t\t\t\tTotal : \t%.2f%s%n", totalPrix, " €");
     }
+
+
+	
 }

@@ -6,17 +6,33 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class SnackMounir {
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         Ticket ticket = new Ticket();
-        //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/test?" + "user=minty&password=greatsqldb");
-        while (true) {
-            System.out.print("Libéllé de l'article (ou 'fin' pour terminer) : ");
-            
-            
-            String description = scanner.nextLine();
+        String modePaiement;
+        
+        
+        
+        Connection conn = null;
+        try {
+            conn =
+               DriverManager.getConnection("jdbc:mysql://localhost/snack_mounir?" +
+                                           "user=root&password=root");
 
-            if (description.equalsIgnoreCase("fin")) {
+            
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        
+        
+        
+        while (true) {
+            System.out.print("Choix de l'article (ou 'fin' pour terminer) : \n");            
+            String plat = scanner.nextLine();
+            
+            if (plat.equalsIgnoreCase("") || (plat.equalsIgnoreCase("fin"))) {
                 break;
             }
 
@@ -29,12 +45,16 @@ public class SnackMounir {
 
             scanner.nextLine();
 
-            Article article = new Article(description, quantite, prixUnitaire);
+            Article article = new Article(plat, quantite, prixUnitaire);
             ticket.addArticle(article);
+            
         }
-        //System.out.print("Mode de paiement : ");
-        //String modePaiement = scanner.nextLine();
-
+        System.out.print("Mode de paiement : ");
+        modePaiement = scanner.nextLine();
+        ticket.setModePaiement(modePaiement);
+        
+        
+        
         ticket.genererTicket();
         scanner.close();
     }
